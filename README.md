@@ -12,6 +12,10 @@ then allow chrome to accept self-signed certificates from localhost with:
 ```
 chrome://flags/#allow-insecure-localhost
 ```
+Other Chrome flags to enable to run the code are:
+
+* ```enable-experimental-web-platform-features``` to use the ```getDevices()``` and ```watchAdvertisements()``` APIs
+* ```enable-web-bluetooth-new-permissions-backend``` to enable first-time only explicit user permission to connect with a particular device. Subsequent requests to connect to the same device will not require the explicit user permission.
 
 You can use a BLE Device Simulator App to simulate a BLE device for experimenting:
 https://github.com/WebBluetoothCG/ble-test-peripheral-android

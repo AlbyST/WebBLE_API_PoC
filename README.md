@@ -34,4 +34,4 @@ https://bugs.chromium.org/p/chromium/issues/detail?id=578811
 * [Reference Examples 1](https://developers.google.com/web/updates/2015/07/interact-with-ble-devices-on-the-web)
 * [Reference Examples 2](https://github.com/WebBluetoothCG/demos)
 * [Reference Examples 3](https://googlechrome.github.io/samples/web-bluetooth/)
-* [Reference Examples 4](https://googlechrome.github.io/samples/web-bluetooth/watch-advertisements.html)# WebBLE_API_PoC
+* [Reference Examples 4](https://googlechrome.github.io/samples/web-bluetooth/watch-advertisements.html)

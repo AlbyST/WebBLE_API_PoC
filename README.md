@@ -17,7 +17,9 @@ Other Chrome flags to enable to run the code are:
 * ```enable-experimental-web-platform-features``` to use the ```getDevices()``` and ```watchAdvertisements()``` APIs
 * ```enable-web-bluetooth-new-permissions-backend``` to enable first-time only explicit user permission to connect with a particular device. Subsequent requests to connect to the same device will not require the explicit user permission.
 
+## BLE Node Simulation App
 You can use a BLE Device Simulator App to simulate a BLE device for experimenting:
+
 https://github.com/WebBluetoothCG/ble-test-peripheral-android
 
 ## Considerations

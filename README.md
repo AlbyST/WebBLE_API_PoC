@@ -1,5 +1,9 @@
 # Web BLE API PoC
 
+This repo holds a very basic PoC of the Web BLE APIs.
+
+Since the APIs work only in trusted environments you need to create your own certificates before running the example code.
+
 Create TSL certificates with:
 ```
 openssl req -nodes -new -x509 -keyout server.key -out server.cert
@@ -9,20 +13,23 @@ then allow chrome to accept self-signed certificates from localhost with:
 chrome://flags/#allow-insecure-localhost
 ```
 
-BLE Device Simulator App:
+You can use a BLE Device Simulator App to simulate a BLE device for experimenting:
 https://github.com/WebBluetoothCG/ble-test-peripheral-android
-
-Possibly Not Supported Error:
-https://chromium.googlesource.com/chromium/blink/+/refs/heads/main/Source/modules/bluetooth/BluetoothError.cpp
-
-Client Characteristic Configuration Descriptor:
-https://github.com/WebBluetoothCG/ble-test-peripheral-android/pull/59
-https://bugs.chromium.org/p/chromium/issues/detail?id=578811
 
 ## Considerations
 
 * Web BLE API is in __experimental__ status for most functionality: not yet suited for production
-* STWIN Fw is not compatible out-of-the-box with current API to receive notifications: Client Characteristic Configuration Descriptors need to be developed (to check)
+* STWIN Fw is not compatible out-of-the-box with current API to receive notifications: Client Characteristic Configuration Descriptors need to be developed (need to check this)
+
+  Trying to enable characteristic's notifications on an STWIN raises the following error:
+
+  https://chromium.googlesource.com/chromium/blink/+/refs/heads/main/Source/modules/bluetooth/BluetoothError.cpp
+
+  It seems that this error is raised because of missing Client Characteristic Configuration Descriptor:
+  
+  https://github.com/WebBluetoothCG/ble-test-peripheral-android/pull/59
+  https://bugs.chromium.org/p/chromium/issues/detail?id=578811
+  
 * Some APIs (for example ```getDevices()``` and ```watchAdvertisements()```) are behind the ```chrome://flags/#enable-experimental-web-platform-features``` flag
 * The __Persistent Device Permissions__ feature is behind the ```chrome://flags/#enable-web-bluetooth-new-permissions-backend``` flag
 
